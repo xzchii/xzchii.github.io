@@ -46,7 +46,7 @@ export const navBarConfig: NavBarConfig = {
 export const profileConfig: ProfileConfig = {
 	avatar: "/avatar.jpg",
 	name: "xzchii",
-	bio: "记录技术、生活与思考",
+	bio: "悲痛沉重之人站立暖阳外，祝远处欢笑的人们明日依旧幸福。",
 	links: [],
 };
 
