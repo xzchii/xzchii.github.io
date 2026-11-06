@@ -53,7 +53,7 @@ export const navBarConfig: NavBarConfig = {
 };
 
 export const profileConfig: ProfileConfig = {
-	avatar: "/avatar.svg",
+	avatar: "/avatar.jpg",
 	name: "xzchii",
 	bio: "记录技术、生活与思考",
 	links: [
