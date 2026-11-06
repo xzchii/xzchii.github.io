@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="xzchii">
+  <defs>
+    <linearGradient id="background" x2="1" y2="1">
+      <stop stop-color="#353178"/>
+      <stop offset="1" stop-color="#6d5bd0"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" rx="80" fill="url(#background)"/>
+  <text x="200" y="215" fill="#fff" font-family="Arial, sans-serif" font-size="110" font-weight="700" text-anchor="middle" dominant-baseline="middle">xz</text>
+</svg>

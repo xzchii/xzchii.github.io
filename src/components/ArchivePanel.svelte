@@ -5,13 +5,11 @@ import I18nKey from "../i18n/i18nKey";
 import { i18n } from "../i18n/translation";
 import { getPostUrlBySlug } from "../utils/url-utils";
 
-export let tags: string[];
-export let categories: string[];
 export let sortedPosts: Post[] = [];
 
 const params = new URLSearchParams(window.location.search);
-tags = params.has("tag") ? params.getAll("tag") : [];
-categories = params.has("category") ? params.getAll("category") : [];
+const tags = params.getAll("tag");
+const categories = params.getAll("category");
 const uncategorized = params.get("uncategorized");
 
 interface Post {
@@ -19,7 +17,7 @@ interface Post {
 	data: {
 		title: string;
 		tags: string[];
-		category?: string;
+		category?: string | null;
 		published: Date;
 	};
 }
@@ -30,6 +28,7 @@ interface Group {
 }
 
 let groups: Group[] = [];
+let ready = false;
 
 function formatDate(date: Date) {
 	const month = (date.getMonth() + 1).toString().padStart(2, "0");
@@ -82,6 +81,7 @@ onMount(async () => {
 	groupedPostsArray.sort((a, b) => b.year - a.year);
 
 	groups = groupedPostsArray;
+	ready = true;
 });
 </script>
 
@@ -147,5 +147,7 @@ onMount(async () => {
                 </a>
             {/each}
         </div>
+    {:else}
+        {#if ready}<p class="py-4 text-center text-50">暂无文章。</p>{/if}
     {/each}
 </div>
